@@ -101,7 +101,7 @@ https://localhost:7215/swagger
 ```
 ou, quando hospedado:  
 ```
-https://<seu-app>.azurewebsites.net/swagger
+https://sprint4csharp.azurewebsites.net/swagger
 ```
 
 ---
