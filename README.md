@@ -1,64 +1,161 @@
-📘 Cadastro de Clientes - Sprint 4 (C#)
-Descrição do Projeto
-O projeto consiste em uma API desenvolvida em ASP.NET Core Web API utilizando Entity Framework para o gerenciamento completo de clientes. Inclui funcionalidades CRUD, consultas LINQ e integração com APIs externas, demonstrando boas práticas de arquitetura, documentação e deploy em ambiente de nuvem.
-🧩 Tecnologias Utilizadas
-- ASP.NET Core 8 (Web API)
-- Entity Framework Core
-- Swagger (Swashbuckle)
-- LINQ para consultas e filtragens
-- SQL Server LocalDB
-- GitHub Actions (CI/CD)
-- Azure App Service (configurado para publicação)
+# 💻 Sprint 4 - C# API
 
+[![.NET](https://img.shields.io/badge/.NET-8.0-blue?logo=dotnet)](https://dotnet.microsoft.com/)
+[![Entity Framework](https://img.shields.io/badge/Entity%20Framework-Core%208.x-blue?logo=nuget)](https://learn.microsoft.com/en-us/ef/core/)
+[![Swagger](https://img.shields.io/badge/Swagger-UI-green?logo=swagger)](https://swagger.io/)
+[![Status](https://img.shields.io/badge/status-concluído-brightgreen)](#)
 
-📁 Estrutura do Projeto
-O projeto segue uma arquitetura organizada por camadas:
+API desenvolvida como parte da **Sprint 4 - C#** da FIAP.  
+O projeto foi construído utilizando **ASP.NET Core Web API** e **Entity Framework**, implementando CRUD completo, consultas LINQ e integração com APIs externas.  
+A aplicação foi configurada para deploy em ambiente Cloud (Azure App Service).
 
-- **Controllers/**: contém os controladores responsáveis pelos endpoints da API.
-- **DTOs/**: objetos de transferência de dados para requisições e respostas.
-- **Services/**: camada de regra de negócio, realizando operações com o banco e regras de validação.
-- **Models/**: classes de modelo representando as entidades do banco de dados.
-- **Data/**: contexto do Entity Framework e configuração do banco de dados.
-- **Program.cs**: configuração principal da aplicação e pipeline HTTP.
-⚙️ Funcionalidades Implementadas
-- CRUD completo de clientes (Create, Read, Update, Delete)
-- Consultas utilizando LINQ (filtros, ordenação e busca)
-- Integração com APIs externas (exemplo: API pública de CEP)
-- Documentação via Swagger
-- Deploy configurado em ambiente Cloud (Azure App Service)
-☁️ Publicação em Nuvem
-A aplicação foi configurada para deploy no Azure App Service com integração ao GitHub Actions. Devido à limitação de créditos estudantis na conta Azure, o serviço não pôde ser mantido ativo, mas toda a configuração e workflow de publicação foram implementados e testados localmente. O repositório contém o arquivo `.github/workflows/azure-webapp.yml` com o pipeline completo.
-🧠 Consultas LINQ
-A API utiliza LINQ para realizar buscas e filtragens no banco de dados, por exemplo:
-- Buscar clientes por nome ou e-mail
-- Ordenar clientes por data de cadastro
-- Filtrar clientes com base em critérios específicos (como cidade ou estado)
-📊 Diagrama da Arquitetura
-O diagrama da arquitetura demonstra a interação entre as camadas do sistema e o fluxo de dados:
+---
 
+## 👥 Integrantes
+- **Eric de Carvalho Rodrigues** - RM550249  
+- **Victoria Franceschini Pizza** - RM550609  
+
+---
+
+## 🚀 Funcionalidades
+
+- **CRUD completo** de clientes (Create, Read, Update, Delete).  
+- **Consultas LINQ** para busca e filtragem.  
+- **Integração com API externa** (ex: consulta de CEP).  
+- **Documentação via Swagger**.  
+- **Estrutura em camadas (Controllers, Services, DTOs, Models)**.  
+- **Configuração pronta para deploy em nuvem** (Azure).  
+
+---
+
+## 📂 Estrutura do Projeto
+
+```bash
+Sprint4CSharp/
+├── Controllers/
+│   └── ClienteController.cs
+├── DTOs/
+│   └── ClienteDTO.cs
+├── Models/
+│   └── Cliente.cs
+├── Services/
+│   └── ClienteService.cs
+├── Data/
+│   └── AppDbContext.cs
+├── Program.cs
+├── appsettings.json
+└── README.md
+```
+
+---
+
+## 🧩 Tecnologias Utilizadas
+
+- **ASP.NET Core 8 (LTS)**  
+- **Entity Framework Core**  
+- **SQL Server LocalDB / Azure SQL**  
+- **Swagger (Swashbuckle)**  
+- **LINQ**  
+- **GitHub Actions (CI/CD)**  
+- **Azure App Service**  
+
+---
+
+## ☁️ Publicação em Nuvem
+
+O projeto foi configurado para deploy no **Azure App Service**, com integração ao **GitHub Actions** para publicação contínua.  
+Devido à limitação de créditos estudantis, o serviço não pôde ser mantido ativo, mas toda a configuração foi implementada e testada.  
+
+> O repositório contém o arquivo `.github/workflows/azure-webapp.yml` com o pipeline configurado.  
+
+---
+
+## 🔍 Consultas LINQ
+
+A API utiliza **LINQ** para realizar consultas como:  
+- Busca de clientes por **nome** ou **e-mail**;  
+- Ordenação por **data de cadastro**;  
+- Filtragem por **UF** ou **cidade**.  
+
+---
+
+## 🧠 Endpoints Principais
+
+| Método | Endpoint              | Descrição                         |
+|---------|----------------------|-----------------------------------|
+| GET     | `/api/Cliente`        | Retorna todos os clientes         |
+| GET     | `/api/Cliente/{id}`   | Retorna um cliente específico     |
+| POST    | `/api/Cliente`        | Cria um novo cliente              |
+| PUT     | `/api/Cliente/{id}`   | Atualiza um cliente existente     |
+| DELETE  | `/api/Cliente/{id}`   | Remove um cliente                 |
+
+---
+
+## 🧾 Documentação Swagger
+
+A documentação é gerada automaticamente pelo Swagger.  
+Após iniciar o projeto, acesse:  
+
+```
+https://localhost:7215/swagger
+```
+ou, quando hospedado:  
+```
+https://<seu-app>.azurewebsites.net/swagger
+```
+
+---
+
+## 🧱 Diagrama da Arquitetura
+
+```
 Usuário → Controller → Service → Repository → Banco de Dados
+```
 
-Essa estrutura garante separação de responsabilidades, facilidade de manutenção e escalabilidade.
-🧾 Documentação Swagger
-A documentação da API é gerada automaticamente via Swagger (Swashbuckle). Para acessá-la, basta executar o projeto e navegar até:
+Essa estrutura garante separação de responsabilidades, clareza no código e facilidade de manutenção.
 
-`https://localhost:7215/swagger`
+---
 
-ou, quando hospedado na nuvem:
+## 📘 Como Executar o Projeto
 
-`https://<seu-app>.azurewebsites.net/swagger`
-📈 Endpoints Principais
-- **GET /api/Cliente** → lista todos os clientes
-- **GET /api/Cliente/{id}** → retorna um cliente específico
-- **POST /api/Cliente** → cria um novo cliente
-- **PUT /api/Cliente/{id}** → atualiza um cliente existente
-- **DELETE /api/Cliente/{id}** → remove um cliente
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RodriguesEric134/Sprint4CSharp.git
+   ```
 
+2. Acesse o diretório:
+   ```bash
+   cd Sprint4CSharp
+   ```
 
-💡 Desenvolvedores
-- Eric Rodrigues - RM550249
-- Victoria Pizza - RM550609
+3. Restaure os pacotes e compile:
+   ```bash
+   dotnet restore
+   dotnet build
+   ```
 
+4. Execute o projeto:
+   ```bash
+   dotnet run
+   ```
 
-📘 Observações Finais
-O projeto cumpre todos os requisitos exigidos pela Sprint 4 da disciplina de C#. O código está devidamente versionado no GitHub e estruturado para legibilidade, manutenção e escalabilidade.
+5. Acesse o Swagger:
+   [https://localhost:7215/swagger](https://localhost:7215/swagger)
+
+---
+
+## 🧩 Observações Finais
+
+O projeto cumpre os requisitos propostos na **Sprint 4 de C#**:  
+- CRUD completo com Entity Framework  
+- Consultas LINQ  
+- Documentação Swagger  
+- Arquitetura em camadas  
+- Publicação configurada em nuvem (Azure)
+
+---
+
+## 📄 Licença
+
+Este projeto é de uso **acadêmico** e desenvolvido para fins didáticos.  
+Sinta-se à vontade para clonar, estudar e evoluir o código.
